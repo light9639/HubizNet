@@ -1,0 +1,105 @@
+.footer {
+    background: #861245;
+    color: #fff;
+
+    .content {
+        padding: 75px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        width: 129px;
+        height: 63px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .addr {
+        margin-left: 5.75em;
+        font-size: 19.98px;
+        letter-spacing: -0.025em;
+        font-weight: 600;
+        word-break: keep-all;
+        line-height: normal;
+
+        .title {
+            color: #ba7895;
+            font-family: $font-en;
+
+            &.last {
+                margin-top: 2em;
+                display: block;
+            }
+        }
+
+        .desc {
+            margin-top: 1em;
+
+            &.last {
+                margin-top: 6px;
+            }
+        }
+
+        .copy {
+            display: block;
+            margin-top: 1em;
+        }
+    }
+
+    .footer-list {
+        margin-left: auto;
+        display: flex;
+
+        .item {
+            text-align: center;
+            margin-right: 0.83em;
+            font-size: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .circle {
+                font-weight: 600;
+                letter-spacing: -0.025em;
+                width: 2.16em;
+                height: 2.16em;
+                border-radius: 100px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #fff;
+                background: #fff;
+                color: #861245;
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                .circle {
+                    border: 1px solid #fff;
+                    background: transparent;
+                    color: #fff;
+                }
+            }
+
+            .title {
+                font-size: 0.66em;
+                letter-spacing: -0.025em;
+                margin-top: 7px;
+                font-family: $font-en;
+                font-weight: bold;
+                display: block;
+            }
+
+            .desc {
+                font-size: 16px;
+                letter-spacing: -0.025em;
+                margin-top: 0.625em;
+            }
+        }
+    }
+}
