@@ -10,12 +10,11 @@
     <meta property="og:title" content="Hubiznet" />
     <meta property="og:url" content="https://light9639.github.io/Hubiz/" />
     <meta property="og:description" content="better & different HR solution company" />
-    <!-- <meta property="og:image" content="" /> -->
+    <meta property="og:image" content="" />
     <meta property="og:site_name" content="Hubiznet" />
 
     <link rel="icon" href="https://www.hubiz.net/asset/img/favicon.png" />
     <link rel="apple-touch-icon" href="https://www.hubiz.net/asset/img/favicon.png" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -27,12 +26,14 @@
     <script charset="UTF-8" class="daum_roughmap_loader_script"
         src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6cb2ad5f3770c4c6cf485df2f6bf2149"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="./assets/js/main.js" defer></script>
 </head>
 
-<body>
+<body class="noScroll">
     <div class="wrapper">
         <header class="header">
             <div class="inner">
@@ -71,124 +72,70 @@
                 <div class="bg-opacity"></div>
             </div>
         </header>
-
-        <!-- <style>
-            .fix-load {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                z-index: 10;
-                background: #000;
-            }
-
-            .fix-load.hide {
-                visibility: hidden;
-                opacity: 0;
-            }
-        </style>
         <div class="fix-load">
-
-        </div> -->
+            <div class="text-wrap">
+                <div class="title">
+                    <div class="block">
+                    </div>
+                </div>
+                <div class="desc">
+                    <div class="block">
+                    </div>
+                </div>
+            </div>
+        </div>
         <main class="container main">
-
-            <style>
-                .sc-visual {}
-
-                .sc-visual .content-wrap {
-                    height: 500vh;
-                    border: 10px solid #000;
-                }
-
-                .sc-visual .content {
-                    position: sticky;
-                    top: 0;
-                    height: 100vh;
-                    border: 10px solid #0f0;
-                }
-
-                .sc-visual .control {
-                    z-index: 8;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: 50px;
-                    border: 1px solid #000;
-                }
-
-                .sc-visual .front {
-                    z-index: 5;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    color: #0f0;
-                    background: #000;
-                }
-
-                .sc-visual .front.hide {
-                    background: transparent;
-                }
-
-                .sc-visual .video {
-                    z-index: 4;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    clip-path: circle(100% at 50% 50%);
-                }
-
-                .sc-visual .video video {
-                    width: 100%;
-                }
-
-                .sc-visual .back {
-                    z-index: 3;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    color: #f00;
-                }
-
-                .sc-visual .swiper-slide {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 50px;
-                }
-
-                .sc-visual .swiper-slide p {
-                    opacity: 0;
-                    transform: translateY(100px);
-                    transition: .5s;
-                }
-
-                .sc-visual .swiper-slide-active p {
-                    opacity: 1;
-                    transform: translateY(0px);
-                }
-            </style>
             <section class="sc-visual">
                 <h2 class="blind">휴비즈넷 메인배너</h2>
                 <div class="content-wrap">
                     <div class="content">
-
                         <div class="video">
                             <video src="./assets/images/vimeo.mp4" loop autoplay muted
                                 poster="./assets/images/1719518660-9e9615139270c5317cf48f86f172e58372d9c8ee26fc048cdca89d3d813c94ff-d.jpg"></video>
                             <div class="swiper front">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <p>내용11 내용11 내용11 내용11 내용11</p>
+                                        <div class="text-wrap">
+                                            <div class="title">
+                                                <div class="block">
+                                                    <div class="dot gra">
+                                                        D<span class="circle"></span>
+                                                    </div>ifferent
+                                                    <span class="mi">&amp;</span>
+                                                    <div class="dot gra">
+                                                        B<span class="circle"></span>
+                                                    </div>etter
+                                                    <div class="typ"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="block">
+                                                    HR solution company
+                                                    <div class="typ"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <p>내용22 내용22 내용22 내용22 내용22</p>
+                                        <div class="text-wrap">
+                                            <div class="title">
+                                                <div class="block">
+                                                    <div class="dot gra">
+                                                        <span class="circle"></span>N
+                                                    </div>ice job
+                                                    <div class="dot gra">
+                                                        <span class="circle"></span>N
+                                                    </div>ice worker
+                                                    <div class="typ"></div>
+                                                </div>
+                                            </div>
+                                            <div class="desc">
+                                                <div class="block">
+                                                    HR solution company
+                                                    <div class="typ"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -196,86 +143,67 @@
                         <div class="swiper back">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <p>내용11 내용11 내용11 내용11 내용11</p>
-                                </div>
-                                <div class="swiper-slide">
-                                    <p>내용22 내용22 내용22 내용22 내용22</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="control">
-                            <button class="prev">이전</button>
-                            <div class="pagination"></div>
-                            <button class="next">다음</button>
-                        </div>
-                        <!-- <video src="./assets/images/vimeo.mp4" loop autoplay muted
-                            poster="./assets/images/1719518660-9e9615139270c5317cf48f86f172e58372d9c8ee26fc048cdca89d3d813c94ff-d.jpg"></video>
-                        <div class="cir-slide">
-                            <div class="content_wrap">
-                                <div class="marker">
-                                    <div class="arr prev">
-                                        <img src="./assets/images/marker-arr.png" alt="이전 버튼">
-                                    </div>
-                                    <div class="dot"></div>
-                                    <div class="dot act"></div>
-                                    <div class="arr next hidden">
-                                        <img src="./assets/images/marker-arr.png" alt="다음 버튼">
-                                    </div>
-                                </div>
-                                <div class="slider">
-                                    <dl class="dl">
-                                        <dt>
+                                    <div class="text-wrap">
+                                        <div class="title">
                                             <div class="block">
                                                 <div class="dot gra gra1">
-                                                    D <span></span>
-                                                </div>
-                                                ifferent
+                                                    D<span class="circle"></span>
+                                                </div>ifferent
                                                 <span class="mi">&amp;</span>
                                                 <div class="dot gra gra2">
-                                                    B <span></span>
-                                                </div>
-                                                etter
+                                                    B<span class="circle"></span>
+                                                </div>etter
                                                 <div class="typ"></div>
                                             </div>
-                                        </dt>
-                                        <dd>
+                                        </div>
+                                        <div class="desc">
                                             <div class="block">
                                                 HR solution company
                                                 <div class="typ"></div>
                                             </div>
-                                        </dd>
-                                    </dl>
-                                    <dl class="dl act">
-                                        <dt>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="text-wrap">
+                                        <div class="title">
                                             <div class="block">
                                                 <div class="dot gra gra1">
-                                                    <span></span>N
-                                                </div>
-                                                ice job
+                                                    <span class="circle"></span>N
+                                                </div>ice job
                                                 <div class="dot gra gra2">
-                                                    <span></span>N
-                                                </div>
-                                                ice worker
+                                                    <span class="circle"></span>N
+                                                </div>ice worker
                                                 <div class="typ"></div>
                                             </div>
-                                        </dt>
-                                        <dd>
+                                        </div>
+                                        <div class="desc">
                                             <div class="block">
                                                 HR solution company
                                                 <div class="typ"></div>
                                             </div>
-                                        </dd>
-                                    </dl>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="control">
+                            <button class="btn prev">
+                                <img src="./assets/images/marker-arr.png" alt="이전 이미지">
+                                <span class="blind">이전</span>
+                            </button>
+                            <div class="pagination"></div>
+                            <button class="btn next">
+                                <img src="./assets/images/marker-arr.png" alt="다음 이미지">
+                                <span class="blind">다음</span>
+                            </button>
                         </div>
                         <div class="scroll-top">
                             <div class="circle"></div>
                             <div class="arrow">
                                 <img src="./assets/images/scroll-top-arr.png" alt="스크롤 내려가시오 이미지">
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </section>
@@ -284,14 +212,14 @@
                 <div class="bg bg1"></div>
                 <div class="bg bg2"></div>
                 <div class="inner">
-                    <p class="intro" data-y="100">
+                    <p class="intro">
                         INTRO
-                        <span class="circle"></span>
+                        <span class="circle" data-circle-x="200px"></span>
                     </p>
                     <div class="content">
-                        <strong class="title" data-y="100">
+                        <strong class="title">
                             <p>
-                                <span class="circle"></span>
+                                <span class="circle" data-circle-y="-200px"></span>
                                 O
                             </p>
                             utsourcing
@@ -353,7 +281,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="sc-space">
                 <div class="sticky">
                     <div class="txt-wrap">
@@ -366,11 +293,11 @@
                                 </p>
                             </div>
                             <ul class="nav">
-                                <li class="act"><a href="#">SPO</a></li>
-                                <li class=""><a href="#">SMO</a></li>
-                                <li class=""><a href="#">IT Solution</a></li>
-                                <li class=""><a href="#">Joinswith</a></li>
-                                <li class=""><a href="#">급여아웃소싱</a></li>
+                                <li><a href="#">SPO</a></li>
+                                <li><a href="#">SMO</a></li>
+                                <li><a href="#">IT Solution</a></li>
+                                <li><a href="#">Joinswith</a></li>
+                                <li><a href="#">급여아웃소싱</a></li>
                             </ul>
                         </div>
                     </div>
@@ -509,7 +436,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="sc-services">
                 <h2 class="blind">휴비즈넷 서비스 페이지</h2>
                 <div class="content">
@@ -583,11 +509,11 @@
                 <header class="group-header">
                     <span class="desc">cooperative company</span>
                     <h2 class="headline">
-                        <div class="dot"><span></span>휴비즈넷</div>과 함께하는 기업입니다
+                        <div class="dot"><span class="cicle" data-circle-x="-300px"></span>휴비즈넷</div>과 함께하는 기업입니다
                     </h2>
                 </header>
                 <div class="content">
-                    <div class="img-line01">
+                    <div class="line img-line01">
                         <div class="img-wrap">
                             <img src="./assets/images/logo_first_line.jpg" alt="로고 라인 첫번쨰">
                         </div>
@@ -601,7 +527,7 @@
                             <img src="./assets/images/logo_first_line.jpg" alt="로고 라인 첫번쨰">
                         </div>
                     </div>
-                    <div class="img-line02">
+                    <div class="line img-line02">
                         <div class="img-wrap">
                             <img src="./assets/images/logo_second_line.jpg" alt="로고 라인 두번째">
                         </div>
@@ -620,7 +546,7 @@
             <section class="sc-info">
                 <div class="inner">
                     <div class="group-info">
-                        <div class="col-left" data-cursor="true">
+                        <div class="col col-left" data-cursor="true">
                             <a href="#">
                                 <div class="cir-box">
                                     <div class="txt-box">
@@ -638,7 +564,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-right">
+                        <div class="col col-right">
                             <a href="#">
                                 <div class="cir-box">
                                     <div class="txt-box">
@@ -652,95 +578,7 @@
                                         </p>
                                     </div>
                                     <div class="circle">
-                                        <div class="tbx">
-                                            <dl>
-                                                <dt>오시는 길</dt>
-                                                <dd>Direction</dd>
-                                            </dl>
-                                            <p>
-                                                휴비즈넷 방문경로를<br>
-                                                확인해보세요
-                                            </p>
-                                        </div>
-                                        <div class="nav">
-                                            <div class="wrap-map">
-                                                <div class="map">
-                                                    <div>
-                                                        <div>
-                                                            <div class="kakao-map">
-                                                                <img src="./assets/images/429.png" alt="카카오 지도 이미지1">
-                                                                <img src="./assets/images/430.png" alt="카카오 지도 이미지2">
-                                                                <img src="./assets/images/431.png" alt="카카오 지도 이미지3">
-                                                                <img src="./assets/images/429.png" alt="카카오 지도 이미지4">
-                                                                <img src="./assets/images/430.png" alt="카카오 지도 이미지5">
-                                                                <img src="./assets/images/431.png" alt="카카오 지도 이미지6">
-                                                                <img src="./assets/images/429.png" alt="카카오 지도 이미지7">
-                                                                <img src="./assets/images/430.png" alt="카카오 지도 이미지8">
-                                                                <img src="./assets/images/431.png" alt="카카오 지도 이미지9">
-                                                            </div>
-                                                            <div>
-                                                                <svg version="1.1" viewBox="0 0 1480 1480">
-                                                                    <defs></defs>
-                                                                </svg>
-                                                            </div>
-                                                            <div>
-                                                                <div>
-                                                                    <img src="./assets/images/marker_map01.png"
-                                                                        alt="카카오맵 포인터">
-                                                                </div>
-                                                                <div>
-                                                                    <div class="roughmap_maker_label">
-                                                                        <a href="#">
-                                                                            <span class="roughmap_lebel_text">휴비즈넷
-                                                                                본사</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <div>
-                                                            <div>100m</div>
-                                                        </div>
-                                                        <div>
-                                                            <a href="http://map.kakao.com/"
-                                                                title="Kakao 지도로 보시려면 클릭하세요.">
-                                                                <img src="./assets/images/m_bi_b.png"
-                                                                    alt="Kakao 지도로 이동">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <span class="map-border border1"></span>
-                                                <span class="map-border border2"></span>
-                                                <span class="map-border border3"></span>
-                                                <span class="map-border border4"></span>
-                                                <div class="wrap-btn-zoom">
-                                                    <button class="btn-zoom-in hide-text">
-                                                        <span class="img-zoom">확대</span>
-                                                    </button>
-                                                    <button class="btn-zoom-out hide-text">
-                                                        <span class="img-zoom">축소</span>
-                                                    </button>
-                                                    <button class="btn-zoom-reset hide-text">
-                                                        <span class="img-zoom">초기화</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="control-wrap">
-                                                <a class="tit-controllers" href="#">
-                                                    <img src="./assets/images/logo_kakaomap.png" width="72" height="16"
-                                                        alt="카카오맵"></a>
-                                                <div class="wrap-btn-roadview">
-                                                    <a class="txt" href="#">로드뷰</a>
-                                                    <span class="txt-bar"></span>
-                                                    <a class="txt" href="#">길찾기</a>
-                                                    <span class="txt-bar"></span>
-                                                    <a class="txt" href="#">지도 크게 보기</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <div id="map"></div>
                                     </div>
                                 </div>
                             </a>

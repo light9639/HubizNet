@@ -4,7 +4,11 @@
     }
 }
 
-@mixin pc-lg() {}
+@mixin pc-lg() {
+    @media (max-width: 1440px) {
+        @content;
+    }
+}
 
 @mixin tb() {
     @media (max-width: 1200px) {

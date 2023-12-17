@@ -59,4 +59,28 @@ body {
     font-size: inherit;
     line-height: 1;
     font-family: "Pretendard-Regular";
+
+    @include pc-lg {
+        min-width: 1720px;
+    }
+
+    &.noScroll {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        position: absolute;
+    }
 }

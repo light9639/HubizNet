@@ -7,6 +7,11 @@
     font-size: 20px;
     transition: all 0.4s;
 
+    @include tb {
+        position: absolute;
+        min-width: 1720px;
+    }
+
     &.bg {
         background-color: rgba(255, 255, 255, 0.85);
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -16,6 +21,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
     }
 
     .logo {
