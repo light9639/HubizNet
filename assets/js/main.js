@@ -134,11 +134,34 @@ visualSlide1.on('slideChange', function () {
         },
         y: -20,
         opacity: 1,
-        duration: 2,
+        duration: 1.5,
         ease: Bounce.easeOut,
         yoyo: true,
     })
 })
+
+/**
+ * sc-visual 70% 오면 슬라이드 변경시키기
+ */
+gsap.to('.sc-visual', {
+    scrollTrigger: {
+        trigger: '.sc-visual',
+        start: '0% 100%',
+        end: '100% 0%',
+        onUpdate: self => {
+            progress = self.progress.toFixed(4) * 100;
+            if (progress >= 50) {
+                visualComplete(1);
+            }
+            if (progress <= 50) {
+                visualComplete(0);
+            }
+        }
+    },
+})
+function visualComplete(e) {
+    visualSlide1.slideTo(e)
+}
 
 /**
  * sc-outsourcing 스크롤 시 아래에서 올라오고 투명도도 1로 변경
@@ -248,7 +271,7 @@ gsap.to('.sc-outsourcing .content > .desc', {
     duration: 5,
     text: result,
     ease: "none",
-    delay: 1
+    // delay: 1
 });
 
 /**
@@ -455,89 +478,53 @@ roomsImgSwiper = new Swiper(".sc-services .imgbox", {
         stretch: 70,
     },
 });
+
+console.log(document.querySelector('.sc-services .textbox .list li:last-child'));
 roomsImgSwiper.on('slideChange', function () {
     roomsTextSwiper.slideTo(this.realIndex)
 
     let TotalList1 = document.querySelectorAll('.sc-services .textbox .swiper-slide')[this.realIndex];
-    let serSpanList1 = TotalList1.querySelector('.title .small');
-    let serSpanList2 = TotalList1.querySelector('.title .main');
-    let serDescList = TotalList1.querySelector('.desc');
-    let serSUbList = TotalList1.querySelector('.sub-title');
-    let serLiList1 = TotalList1.querySelectorAll('.list li')[0];
-    let serLiList2 = TotalList1.querySelectorAll('.list li')[1];
+    let list = [
+        '.sc-services .textbox .title .small',
+        '.sc-services .textbox .title .main',
+        '.sc-services .textbox .desc',
+        '.sc-services .textbox .sub-title',
+        '.sc-services .textbox .list li:first-child',
+        '.sc-services .textbox .list li:last-child',
+    ]
 
-    gsap.set(serSpanList1, { opacity: 0, y: '200px' })
-    gsap.to(serSpanList1, {
-        scrollTrigger: {
-            trigger: TotalList1,
-            start: '0% 100%',
-            end: '100% 0%',
-        },
-        opacity: 1,
-        y: '0px',
-        duration: 0.4,
+    list.forEach((el, i) => {
+        console.log(i);
+        gsap.set(el, { opacity: 0, y: '200px' })
+        gsap.to(el, {
+            scrollTrigger: {
+                trigger: TotalList1,
+                start: '0% 100%',
+                end: '100% 0%',
+            },
+            opacity: 1,
+            y: '0px',
+            duration: 0.4,
+            delay: (i + 1) * .2,
+        })
     })
-    gsap.set(serSpanList2, { opacity: 0, y: '200px' })
-    gsap.to(serSpanList2, {
+
+    gsap.set('.sc-services .textbox .circle', {
+        y: -300,
+        opacity: 0,
+    })
+    gsap.to('.sc-services .textbox .circle', {
         scrollTrigger: {
             trigger: TotalList1,
-            start: '0% 100%',
-            end: '100% 0%',
+            start: "0% 100%",
+            end: "100% 0%",
         },
+        y: 0,
         opacity: 1,
-        y: '0px',
         duration: 1,
-        delay: 0.2
-    })
-    gsap.set(serDescList, { opacity: 0, y: '200px' })
-    gsap.to(serDescList, {
-        scrollTrigger: {
-            trigger: TotalList1,
-            start: '0% 100%',
-            end: '100% 0%',
-        },
-        opacity: 1,
-        y: '0px',
-        duration: 1,
-        delay: 0.4
-    })
-    gsap.set(serSUbList, { opacity: 0, y: '200px' })
-    gsap.to(serSUbList, {
-        scrollTrigger: {
-            trigger: TotalList1,
-            start: '0% 100%',
-            end: '100% 0%',
-        },
-        opacity: 1,
-        y: '0px',
-        duration: 0.4,
-        delay: 0.6
-    })
-    gsap.set(serLiList1, { opacity: 0, y: '200px' })
-    gsap.to(serLiList1, {
-        scrollTrigger: {
-            trigger: TotalList1,
-            start: '0% 100%',
-            end: '100% 0%',
-        },
-        opacity: 1,
-        y: '0px',
-        duration: 0.4,
-        delay: 0.8,
-        // stagger: 0.1,
-    })
-    gsap.set(serLiList2, { opacity: 0, y: '200px' })
-    gsap.to(serLiList2, {
-        scrollTrigger: {
-            trigger: TotalList1,
-            start: '0% 100%',
-            end: '100% 0%',
-        },
-        opacity: 1,
-        y: '0px',
-        duration: 0.4,
-        delay: 1.2,
-        // stagger: 0.1,
+        delay: 0.6,
+        ease: Bounce.easeOut,
+        yoyo: true,
     })
 })
 
@@ -570,131 +557,10 @@ gsap.to('.sc-services', {
             if (progress >= 25) {
                 tweenComplete(1);
                 $('.sc-services .service-wrap .tap li').eq(1).addClass('act').siblings().removeClass('act');
-
-                // let TotalList1 = document.querySelectorAll('.sc-services .textbox .swiper-slide')[1]
-                // let serSpanList = TotalList1.querySelectorAll('.title span')
-                // let serDescList = TotalList1.querySelector('.desc')
-                // let serSUbList = TotalList1.querySelector('.sub-title')
-                // let serLiList = TotalList1.querySelectorAll('.list li')
-
-                // console.log(serDescList);
-
-                // serSpanList.forEach(el => {
-                //     gsap.set(el, { opacity: 0, y: '100px' })
-                //     gsap.to(el, {
-                //         scrollTrigger: {
-                //             trigger: TotalList1,
-                //             start: '0% 100%',
-                //             end: '100% 0%',
-                //         },
-                //         opacity: 1,
-                //         y: '0px',
-                //         // duration: 1,
-                //     })
-                // })
-                // gsap.set(serDescList, { opacity: 0, y: '100px' })
-                // gsap.to(serDescList, {
-                //     scrollTrigger: {
-                //         trigger: TotalList1,
-                //         start: '0% 100%',
-                //         end: '100% 0%',
-                //     },
-                //     opacity: 1,
-                //     y: '0px',
-                //     // duration: 1,
-                //     // delay: 0.4
-                // })
-                // gsap.set(serSUbList, { opacity: 0, y: '100px' })
-                // gsap.to(serSUbList, {
-                //     scrollTrigger: {
-                //         trigger: TotalList1,
-                //         start: '0% 100%',
-                //         end: '100% 0%',
-                //     },
-                //     opacity: 1,
-                //     y: '0px',
-                //     // duration: 1,
-                //     // delay: 0.8
-                // })
-                // serLiList.forEach((el, i) => {
-                //     gsap.set(el, { opacity: 0, y: '100px' })
-                //     gsap.to(el, {
-                //         scrollTrigger: {
-                //             trigger: TotalList1,
-                //             start: '0% 100%',
-                //             end: '100% 0%',
-                //         },
-                //         opacity: 1,
-                //         y: '0px',
-                //         // duration: 1,
-                //         // delay: 1.2,
-                //         // stagger: 0.1,
-                //     })
-                // })
             }
             if (progress <= 25) {
                 tweenComplete(0);
                 $('.sc-services .service-wrap .tap li').eq(0).addClass('act').siblings().removeClass('act');
-
-                // let TotalList0 = document.querySelectorAll('.sc-services .textbox .swiper-slide')[0]
-                // let serSpanList1 = TotalList0.querySelectorAll('.title span')
-                // let serDescList1 = TotalList0.querySelector('.desc')
-                // let serSUbList1 = TotalList0.querySelector('.sub-title')
-                // let serLiList1 = TotalList0.querySelectorAll('.list li')
-
-                // serSpanList1.forEach((el, i) => {
-                //     gsap.set(el, { opacity: 0, y: '100px' })
-                //     gsap.to(el, {
-                //         scrollTrigger: {
-                //             trigger: TotalList0,
-                //             start: '0% 100%',
-                //             end: '100% 0%',
-                //         },
-                //         opacity: 1,
-                //         y: '0px',
-                //         // duration: 1,
-                //         // stagger: 0.1,
-                //     })
-                // })
-                // gsap.set(serDescList1, { opacity: 0, y: '100px' })
-                // gsap.to(serDescList1, {
-                //     scrollTrigger: {
-                //         trigger: TotalList0,
-                //         start: '0% 100%',
-                //         end: '100% 0%',
-                //     },
-                //     opacity: 1,
-                //     y: '0px',
-                //     // duration: 1,
-                //     // delay: 0.4
-                // })
-                // gsap.set(serSUbList1, { opacity: 0, y: '100px' })
-                // gsap.to(serSUbList1, {
-                //     scrollTrigger: {
-                //         trigger: TotalList0,
-                //         start: '0% 100%',
-                //         end: '100% 0%',
-                //     },
-                //     opacity: 1,
-                //     y: '0px',
-                //     // duration: 1,
-                //     // delay: 0.8
-                // })
-                // serLiList1.forEach((el, i) => {
-                //     gsap.set(el, { opacity: 0, y: '100px' })
-                //     gsap.to(el, {
-                //         scrollTrigger: {
-                //             trigger: TotalList0,
-                //             start: '0% 100%',
-                //             end: '100% 0%',
-                //         },
-                //         opacity: 1,
-                //         y: '0px',
-                //         // duration: 1,
-                //         // delay: 1.2,
-                //         // stagger: 0.1,
-                //     })
-                // })
             }
         }
     },
@@ -704,7 +570,7 @@ function tweenComplete(e) {
 }
 
 /**
- * 
+ * sc-cooperative 부분 변화시키기
  */
 gsap.set('.sc-cooperative .content .img-wrap', {
     y: '100px', opacity: 0,

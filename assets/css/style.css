@@ -1138,8 +1138,7 @@ body::-webkit-scrollbar-track {
   margin-top: 0.1428571429em;
   display: inline-block;
 }
-.container .sc-services .textbox .swiper-slide .title .main::after {
-  content: "";
+.container .sc-services .textbox .swiper-slide .title .main .circle {
   width: 0.2142857143em;
   height: 0.2142857143em;
   border-radius: 1000px;
