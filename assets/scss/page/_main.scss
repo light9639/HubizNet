@@ -1137,9 +1137,12 @@
                     flex: 0 0 auto;
                     margin-left: -0.8666666667em;
 
-                    #map {
-                        width: 296px;
-                        height: 296px;
+                    .wrap_btn_zoom {
+                        display: none;
+                    }
+
+                    .wrap_controllers {
+                        display: none;
                     }
 
                     &::after {

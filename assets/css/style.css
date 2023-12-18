@@ -1468,9 +1468,11 @@ body::-webkit-scrollbar-track {
           flex: 0 0 auto;
   margin-left: -0.8666666667em;
 }
-.container .sc-info .col-right .cir-box .circle #map {
-  width: 296px;
-  height: 296px;
+.container .sc-info .col-right .cir-box .circle .wrap_btn_zoom {
+  display: none;
+}
+.container .sc-info .col-right .cir-box .circle .wrap_controllers {
+  display: none;
 }
 .container .sc-info .col-right .cir-box .circle::after {
   content: none;
